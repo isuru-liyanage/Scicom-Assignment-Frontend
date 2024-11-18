@@ -1,10 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+<div class="card-div">
+  <mat-card appearance="outlined" >
+    <mat-card-header>
+      <mat-card-title>Register Now</mat-card-title>
+    </mat-card-header>
+    <mat-divider ></mat-divider>
+    <mat-card-content>
+      <form class="form-login">
+        <mat-form-field class="input-full-width" >
+          <mat-label>Username</mat-label>
+          <input type="text" matInput [formControl]="usernameFormControl" placeholder="Ex. JohnDoe">
+          @if (usernameFormControl.hasError('required')) {
+            <mat-error>Username is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="input-full-width" >
+          <mat-label>Display Name</mat-label>
+          <input type="text" matInput [formControl]="displaynameFormControl" placeholder="Ex. John">
+          @if (displaynameFormControl.hasError('required')) {
+            <mat-error>Username is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="input-full-width" >
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+          @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+            <mat-error>Please enter a valid email address</mat-error>
+          }
+          @if (emailFormControl.hasError('required')) {
+            <mat-error>Email is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="input-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput [formControl]="passwordFormControl" placeholder="Ex. *******">
+          @if (passwordFormControl.hasError('required')) {
+            <mat-error>Password is <strong>required</strong></mat-error>
+          }
+          @if (passwordFormControl.hasError('minlength')) {
+            <mat-error>Password must be at least <strong>8 characters</strong></mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="input-full-width">
+          <mat-label>Confirm Password</mat-label>
+          <input type="password" matInput [formControl]="confirmPasswordFormControl" placeholder="Ex. *******">
+          @if (confirmPasswordFormControl.hasError('required')) {
+            <mat-error>Password is <strong>required</strong></mat-error>
+          }
+          @if (confirmPasswordFormControl.hasError('passwordMismatch')) {
+            <mat-error>Passwords do not match</mat-error>
+          }
+        </mat-form-field>
+      </form>
+      <div class="row">
+        <a ></a>
+        <button  mat-flat-button [disabled]="isDisabled"  >Sign up</button>
+      </div>
 
-</body>
-</html>
+
+
+    </mat-card-content>
+  </mat-card>
+</div>
