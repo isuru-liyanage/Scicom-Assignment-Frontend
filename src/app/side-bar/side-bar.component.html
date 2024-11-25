@@ -1,0 +1,24 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidenav -->
+  <mat-sidenav mode="side" opened>
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/add_item"  [queryParams]="{ mode: 'Add' } " routerLinkActive="active">
+        <mat-icon>add_circle</mat-icon>
+        Add Inventory
+      </a>
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active">
+        <mat-icon>search</mat-icon>
+        Search Inventory
+      </a>
+      <a mat-list-item routerLink="/change_pw" routerLinkActive="active">
+        <mat-icon>person</mat-icon>
+        Change Profile Details
+      </a>
+     <a mat-list-item class="logout">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>
