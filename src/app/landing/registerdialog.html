@@ -1,5 +1,6 @@
 <div class="card-div">
   <mat-card appearance="outlined" >
+    <lib-toastify-toast-container></lib-toastify-toast-container>
     <mat-card-header>
       <mat-card-title>Register Now</mat-card-title>
     </mat-card-header>
@@ -53,7 +54,7 @@
       </form>
       <div class="row">
         <a ></a>
-        <button  mat-flat-button [disabled]="isDisabled"  >Sign up</button>
+        <button  mat-flat-button [disabled]="isDisabled" (click)="signUp()"  >Sign up</button>
       </div>
 
 
